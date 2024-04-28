@@ -1,4 +1,13 @@
 #!/usr/bin/make -f
+#export DH_VERBOSE = 1
+
+export PYBUILD_NAME=consolekit
+export PYBUILD_TEST_CUSTOM=1
 
 %:
-	dh $@
+	dh $@  --buildsystem=pybuild
+
+override_dh_auto_test:
+ifeq (,$(filter nocheck,$(DEB_BUILD_OPTIONS)))
+	 python3 -m pytest  -v
+endif
