@@ -1,15 +1,61 @@
-Source: template-repository
-Section: unknown
+Source: python-consolekit
+Section: python
 Priority: optional
-Maintainer: Tsic404 <liuheng@deepin.org>
-Build-Depends: debhelper (>= 11)
-Standards-Version: 4.1.3
-Homepage: https://github.com/deepin-community/template-repository
-#Vcs-Browser: https://salsa.debian.org/debian/deepin-community-template-repository
-#Vcs-Git: https://salsa.debian.org/debian/deepin-community-template-repository.git
+Maintainer: Josenilson Ferreira da Silva <nilsonfsilva@hotmail.com>
+Rules-Requires-Root: no
+Build-Depends: debhelper-compat (= 13),
+               dh-sequence-python3,
+               flit,
+               pybuild-plugin-pyproject,
+               python3-all,
+               python3-click,
+               python3-coincidence,
+               python3-colorama,
+               python3-coverage,
+               python3-deprecation-alias,
+               python3-domdf-python-tools,
+               python3-importlib-metadata,
+               python3-iniconfig,
+               python3-mistletoe,
+               python3-mypy,
+               python3-psutil,
+               python3-pytest-cov,
+               python3-pytest-regressions,
+               python3-pytest-timeout,
+               python3-typing-extensions
+Standards-Version: 4.6.2
+Homepage: https://github.com/domdfcoding/consolekit
+Vcs-Browser: https://salsa.debian.org/python-team/packages/python-consolekit
+Vcs-Git: https://salsa.debian.org/python-team/packages/python-consolekit.git
+Testsuite: autopkgtest-pkg-pybuild
 
-Package: template-repository
-Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
-Description: <insert up to 60 chars description>
- <insert long description, indented with spaces>
+Package: python3-consolekit
+Architecture: all
+Depends: ${misc:Depends},
+         ${python3:Depends}
+Description: Additional utilities for click
+ ConsoleKit is a Python utility that provides functionality to facilitate
+ the creation of interactive applications in the terminal/console through
+ clicks.
+ .
+ Input/Output Handling: ConsoleKit can provide utilities to interact with
+ user input and display information on the terminal. This can include reading
+ input, displaying messages, formatting text, and controlling colors.
+ .
+ Selection of menus and options: The package can support the creation of
+ interactive menus in the terminal, allowing the user to select options using
+ specific keys or numbers. This can be useful in cases where there are many
+ options to choose from and the application needs an intuitive interface.
+ .
+ Handling Command Line Arguments: ConsoleKit can help parse and process
+ arguments given on the command line when starting the application. This
+ might include defining expected arguments, validating input, and providing
+ help on proper application usage.
+ .
+ Interactive interface: With ConsoleKit, you can create an interactive
+ interface where your application can display information to the user,
+ request input, and dynamically respond to user actions.
+ .
+ Terminal Control: The package can provide functionality to manipulate
+ aspects of the terminal such as clearing the screen, positioning the
+ cursor, and resizing the window.
